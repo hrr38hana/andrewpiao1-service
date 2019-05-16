@@ -1,0 +1,38 @@
+{
+  "name": "andrewpiao1-service",
+  "description": "> Project description",
+  "author": "Andrew Piao",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "start": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewpiao1/andrewpiao1-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewpiao1/andrewpiao1-service/issues"
+  },
+  "homepage": "https://github.com/andrewpiao1/andrewpiao1-service#readme"
+}
