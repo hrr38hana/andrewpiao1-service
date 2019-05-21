@@ -9,7 +9,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <p1>React "App" working:</p1>
+        <p>React "App" working:</p>
       </div>
     )
   }
