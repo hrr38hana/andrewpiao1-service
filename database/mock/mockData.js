@@ -70,7 +70,6 @@ const colorGroup = [
   'red',
   'black',
   'gunmetal',
-  'pink',
   'white',
   'blue',
   'yellow'

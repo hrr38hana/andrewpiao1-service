@@ -7,12 +7,7 @@ const Product = require('../database/models.js')
 // app.use(express.static(__dirname + '/../client/public'))
 
 app.get('/show', (req,res)=>{
-  res.send('hello')
-  Product.find({}, (err,res)=>{
-    console.log('RES: ', res)
-  })
+  res.send('testing')
 })
-
-
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
