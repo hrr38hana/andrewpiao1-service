@@ -55,7 +55,7 @@ const name = [
 
 const type = [
   'helmet',
-  'light',
+  'LED light',
   'jacket',
   'tights',
   'shirt',
@@ -111,7 +111,9 @@ const designAdj = [
   'easy integration',
   'rider experience',
   'performance riders',
-  'easy of use'
+  'ease of use'
 ]
+
+
 
 module.exports = {brand, name, type, colorGroup, itemAdj, designAdj}

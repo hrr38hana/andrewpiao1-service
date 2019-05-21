@@ -9,11 +9,12 @@ db.once('open', ()=>{console.log('--- Mongoose Connected ---')})
 var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
+  id: Number,
   name: String,
+  brand: String,
   type: String,
   colorGroup: String,
   description: String,
-  releaseDate: Date,
   price: Number,
   imagePath: String
 })
