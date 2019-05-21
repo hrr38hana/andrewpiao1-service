@@ -10,8 +10,12 @@ var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
   name: String,
+  type: String,
+  colorGroup: String,
   description: String,
-  price: Number
+  releaseDate: Date,
+  price: Number,
+  imagePath: String
 })
 
 var Product =  mongoose.model('Product', productSchema)
