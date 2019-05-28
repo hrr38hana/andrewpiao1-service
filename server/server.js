@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.get('/images', (req,res)=>{
-  Product.find({}).limit(1).exec()
+  Product.find({}).limit(5).exec()
     .then((products)=>{
       // console.log("*** RETURNED PRODUCTS:  ", products)
       res.send(products)

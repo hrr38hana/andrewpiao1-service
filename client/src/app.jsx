@@ -23,9 +23,11 @@ class App extends React.Component {
   componentDidMount(){
     $.get('/images')
       .then(res => {
-        var colorGroup = res[0].colorGroup
+        var i = Math.floor(5 * Math.random())
+
+        var colorGroup = res[i].colorGroup
         // console.log("--- RES from GET", res[0].imagePaths)
-        var imagesByColor = res[0].imagePaths[colorGroup]
+        var imagesByColor = res[i].imagePaths[colorGroup]
 
         this.setState({images: imagesByColor})
         console.log('STATE: ', this.state.images)

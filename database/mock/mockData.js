@@ -55,10 +55,10 @@ const name = [
 
 const type = [
   'helmet',
+  'shirt'
   // 'LED light',
   // 'jacket',
   // 'tights',
-  // 'shirt',
   // 'leg warmers',
   // 'gloves',
   // 'kickstand',
@@ -126,6 +126,16 @@ const images = {
       'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm4-y.jpeg',
       'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm5-y.jpeg',
       'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm6-y.jpeg',
+    ]
+  },
+  shirt: {
+    black: [
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/shirts/shirt1-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/shirts/shirt2-b.jpeg'
+    ],
+    yellow: [
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/shirts/shirt1-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/shirts/shirt2-y.jpeg'
     ]
   }
 }
