@@ -55,23 +55,19 @@ const name = [
 
 const type = [
   'helmet',
-  'LED light',
-  'jacket',
-  'tights',
-  'shirt',
-  'leg warmers',
-  'gloves',
-  'kickstand',
-  'handlebar'
+  // 'LED light',
+  // 'jacket',
+  // 'tights',
+  // 'shirt',
+  // 'leg warmers',
+  // 'gloves',
+  // 'kickstand',
+  // 'handlebar'
 ]
 
 //colors
 const colorGroup = [
-  'red',
   'black',
-  'gunmetal',
-  'white',
-  'blue',
   'yellow'
 ]
 
@@ -113,6 +109,27 @@ const designAdj = [
   'ease of use'
 ]
 
+const images = {
+  helmet: {
+    black: [
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm1-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm2-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm3-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm4-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm5-b.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-black/helm6-b.jpeg',
+    ],
+    yellow: [
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm1-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm2-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm3-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm4-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm5-y.jpeg',
+      'https://s3.us-east-2.amazonaws.com/fechrr38hana/helmet-yellow/helm6-y.jpeg',
+    ]
+  }
+}
 
 
-module.exports = {brand, name, type, colorGroup, itemAdj, designAdj}
+
+module.exports = {brand, name, type, colorGroup, itemAdj, designAdj, images}

@@ -16,7 +16,7 @@ var productSchema = new Schema({
   colorGroup: String,
   description: String,
   price: Number,
-  imagePath: String
+  imagePaths: Object
 })
 
 var Product =  mongoose.model('Product', productSchema)

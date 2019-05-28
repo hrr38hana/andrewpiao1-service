@@ -1,8 +1,7 @@
 const data = require('./mockData.js')
 const Product = require('../models.js')
-const mongoose = require('mongoose')
 
-//{brand, name, type, colorGroup, itemAdj, designAdj}
+//{brand, name, type, colorGroup, itemAdj, designAdj, images}
 
 var randomSelectFrom = (dataArr) => {
   var i = Math.floor(Math.random() * dataArr.length)
@@ -17,11 +16,18 @@ var descriptionGen = (itemAdj, type, designAdj) =>{
   return `${itemAdj} ${type} designed for ${designAdj}.`
 }
 
+var imagePathsGen = (type) => {
+  // console.log('__imagePathsGen: ', data.images[type])
+  return data.images[type]
+
+}
+
 const mockProduct = (id) => {
   let product = {};
   let brand = randomSelectFrom(data.brand);
   let name = randomSelectFrom(data.name);
   let type = randomSelectFrom(data.type);
+  let colorGroup = randomSelectFrom(data.colorGroup);
   let itemAdj = randomSelectFrom(data.itemAdj);
   let designAdj = randomSelectFrom(data.designAdj);
 
@@ -29,10 +35,10 @@ const mockProduct = (id) => {
   product.name = nameGen(brand, name, type);
   product.brand = brand;
   product.type = type;
-  product.colorGroup = randomSelectFrom(data.colorGroup);
+  product.colorGroup = colorGroup;
   product.description = descriptionGen(itemAdj, type, designAdj);
   product.price = Math.ceil(Math.random()*100) + 15
-  product.imagePath = 'https://www.w3schools.com/images/picture.jpg'
+  product.imagePaths = imagePathsGen(type)
 
   return new Product(product)
 }
