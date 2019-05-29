@@ -4,7 +4,6 @@ mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true });
 
 const seedMockData = async() => {
   await seed()
-  //not sure how to disconnect after seeding finishes
+  // not sure how to disconnect
 }
-seedMockData();
-
+seedMockData()

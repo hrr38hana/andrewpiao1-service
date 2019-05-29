@@ -18,9 +18,10 @@ class App extends React.Component {
   }
 
   async handleClick(e){
-    var color = await e.target.id
+    e.preventDefault();
+    var color = e.target.id
 
-    this.setState({colorGroup: color, banana: color})
+    await this.setState({colorGroup: color, banana: color})
     this.forceUpdate();
     // this.setState({banana: color})
     console.log('NEW STATE: ', this.state)
