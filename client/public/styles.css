@@ -1,1 +1,14 @@
 @import "./Carousel.css";
+
+body{
+  background-color: lightgrey;
+}
+
+/* .swatches{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 3px;
+  border-radius: 50%;
+  border: 1px dotted blue;
+} */

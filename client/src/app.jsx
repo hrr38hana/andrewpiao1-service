@@ -1,23 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Slider from "./Slider.jsx";
 import $ from 'jquery';
+import Slider from "./Slider.jsx";
+import ColorSelector from './ColorSelector.jsx'
+
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      images: [
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
-        // "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg"
-      ]
+      colorGroup: '',
+      images: [],
+      colorsAvailable: [],
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  async handleClick(e){
+    var color = await e.target.id
+
+    this.setState({colorGroup: color, banana: color})
+    this.forceUpdate();
+    // this.setState({banana: color})
+    console.log('NEW STATE: ', this.state)
   }
 
   componentDidMount(){
@@ -26,23 +32,31 @@ class App extends React.Component {
         var i = Math.floor(5 * Math.random())
 
         var colorGroup = res[i].colorGroup
-        // console.log("--- RES from GET", res[0].imagePaths)
-        var imagesByColor = res[i].imagePaths[colorGroup]
+        var colorsAvailable = Object.keys(res[i].imagePaths)
+        var images = res[i].imagePaths
 
-        this.setState({images: imagesByColor})
-        console.log('STATE: ', this.state.images)
+        this.setState({colorGroup, images, colorsAvailable})
+
+        console.log('STATE: ', this.state)
       })
   }
 
   render() {
-    // if (!this.state.images){
-    //   return <span>not yet loaded!</span>
-    // }
+    if (!Object.keys(this.state.images).length){
+      return <span>loading...</span>
+    }
+
+    const images = this.state.images[this.state.colorGroup]
+    // console.log('these IMAGES: ', images)
 
     return (
-
       <div>
-      <Slider images={this.state.images} />
+
+      <Slider images={images} colorGroup={this.state.colorGroup}/>
+
+      <h2>color selector:</h2>
+      <ColorSelector colors={this.state.colorsAvailable} handleClick={this.handleClick}/>
+
     </div>
     );
   }

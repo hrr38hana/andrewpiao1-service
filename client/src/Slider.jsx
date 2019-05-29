@@ -7,18 +7,17 @@ class Slider extends React.Component {
   }
 
   render() {
-    const {images} = this.props;
     return (
-        <Carousel showArrows={true} >
-          {images.map(image => (
+        <Carousel showArrows={true} showThumbs={true}>
+          {this.props.images.map(image => (
             <div key={image}>
-              <img src={image} alt=""/>
-
+              <img src={image}/>
             </div>
           ))}
         </Carousel>
       );
   }
 }
+
 
 export default Slider;
