@@ -15,9 +15,7 @@ app.get('/images', (req,res)=>{
     .then((products)=>{
       // console.log("*** RETURNED PRODUCTS:  ", products)
       res.send(products)
-    })
-
-
+  })
 })
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))

@@ -8,23 +8,16 @@ import ColorSelector from './ColorSelector.jsx'
 class App extends React.Component {
   constructor(props) {
     super(props)
+
+    this.allImages = {}
+
     this.state = {
       colorGroup: '',
-      images: [],
+      currImages: [],
       colorsAvailable: [],
     }
 
     this.handleClick = this.handleClick.bind(this)
-  }
-
-  async handleClick(e){
-    e.preventDefault();
-    var color = e.target.id
-
-    await this.setState({colorGroup: color, banana: color})
-    this.forceUpdate();
-    // this.setState({banana: color})
-    console.log('NEW STATE: ', this.state)
   }
 
   componentDidMount(){
@@ -34,31 +27,38 @@ class App extends React.Component {
 
         var colorGroup = res[i].colorGroup
         var colorsAvailable = Object.keys(res[i].imagePaths)
-        var images = res[i].imagePaths
+        var allImages = res[i].imagePaths
 
-        this.setState({colorGroup, images, colorsAvailable})
+        this.allImages = allImages
 
+        this.setState({colorGroup, colorsAvailable, currImages: allImages[colorGroup]})
+        console.log('ALL IMAGES: ',  this.allImages)
         console.log('STATE: ', this.state)
-      })
+    })
+  }
+
+  handleClick(e){
+    e.preventDefault();
+    var color = e.target.id
+
+    this.setState({colorGroup: color})
+    this.forceUpdate();
+
+    console.log('NEW STATE: ', this.state)
   }
 
   render() {
-    if (!Object.keys(this.state.images).length){
+    if (!Object.keys(this.state.currImages).length){
       return <span>loading...</span>
     }
 
-    const images = this.state.images[this.state.colorGroup]
-    // console.log('these IMAGES: ', images)
+    const images = this.allImages[this.state.colorGroup]
 
     return (
       <div>
-
-      <Slider images={images} colorGroup={this.state.colorGroup}/>
-
-      <h2>color selector:</h2>
-      <ColorSelector colors={this.state.colorsAvailable} handleClick={this.handleClick}/>
-
-    </div>
+        <Slider images={images} colorGroup={this.state.colorGroup}/>
+        <ColorSelector colors={this.state.colorsAvailable} currColor={this.state.colorGroup} handleClick={this.handleClick}/>
+      </div>
     );
   }
 }
