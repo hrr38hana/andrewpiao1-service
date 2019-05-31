@@ -45,10 +45,12 @@ const mockProduct = (id) => {
 
 const seed = async() => {
   await Product.deleteMany({});
-  for (let i=1; i<=50; i++){
+  for (let i=1; i<=99; i++){
     const product = mockProduct(i);
     product.save()
   }
+
+  return mockProduct(100).save();
 }
 
 module.exports = seed;

@@ -4,7 +4,7 @@
   -ms-transition: all .25s ease-in;
   -o-transition: all .25s ease-in;
   transition: all .25s ease-in;
-  opacity: .4;
+  opacity: .8;
   position: absolute;
   z-index: 2;
   top: 20px;
@@ -16,12 +16,14 @@
 .carousel .control-arrow:hover {
   opacity: 1;
 }
+
 .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
   margin: 0 5px;
   display: inline-block;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   content: ''}
+
 .carousel .control-disabled.control-arrow {
   opacity: 0;
   cursor: inherit;
